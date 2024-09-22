@@ -64,3 +64,8 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 
 // Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+Route::get('/symlink', function () {
+    Artisan::call('storage:link');
+    echo 'Symlink process successfully completed';
+});
